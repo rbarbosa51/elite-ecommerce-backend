@@ -43,14 +43,6 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
-/*
-// Change everyone without a last name to "Doe"
-await User.update({ lastName: "Doe" }, {
-  where: {
-    lastName: null
-  }
-});
-*/
 
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
@@ -86,7 +78,7 @@ router.delete('/:id', async (req, res) => {
     }
     res.sendStatus(200).json(categoryData);
   } catch (err) {
-
+    res.status(500).json(err);
   }
 });
 
